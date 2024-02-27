@@ -38,7 +38,9 @@ class Cart():
 
         products = Product.objects.filter(id__in=all_product_ids)
 
-        cart = self.cart.copy()
+        import copy
+
+        cart = copy.deepcopy(self.cart)
 
         for product in products:
 
@@ -74,3 +76,4 @@ class Cart():
 
             self.cart[product_id]['qty'] = product_quantity
             
+        self.session.modified = True

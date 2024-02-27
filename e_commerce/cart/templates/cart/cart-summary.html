@@ -123,9 +123,11 @@
 
       success: function (json) {
         console.log(json);
-        location.reload();
+        location.reload(true);
         <!-- json total refers from views -->
-        document.getElementById("total").textContent = json.total;
+        document.getElementById('cart-qty').textContent = json.qty
+        document.getElementById("total").textContent = json.total
+        <!-- cart-qty and total depends on key of json defined -->
       },
 
       error: function (xhr, errmsg, err) {},
@@ -153,9 +155,10 @@
 
       success: function (json) {
         console.log(json);
-        location.reload();
+        location.reload(true);
         <!-- json total refers from views -->
-        document.getElementById("total").textContent = json.total;
+        document.getElementById('cart-qty').textContent = json.qty
+        document.getElementById("total").textContent = json.total
       },
 
       error: function (xhr, errmsg, err) {},
